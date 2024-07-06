@@ -1,3 +1,4 @@
-data/crawled_data
+data/
 env/
 __pycache__/
+*.sqlite3
