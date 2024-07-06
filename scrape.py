@@ -8,8 +8,6 @@ from tqdm import tqdm
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service as ChromeService
-
 
 from utils.misc import csv_init, generate_hash
 
@@ -90,7 +88,6 @@ with open("data/urls.csv", mode="a", newline="") as file:
             writer.writerow(url)
 
 
-
 with open('data/urls.csv', 'r') as file:
     reader = csv.reader(file)
     for row in reader:
@@ -105,7 +102,5 @@ with open('data/urls.csv', 'r') as file:
             text_elements = driver.find_elements(By.XPATH, "//*[not(self::script or self::style)]")
             text_content = "\n".join([element.text for element in text_elements])
             with open(f"data/crawled_data/{row[2]}.txt", "w", encoding="utf-8") as file:
-                file.write(text_content) 
+                file.write(text_content)
 driver.quit()
-
-

@@ -2,6 +2,7 @@ import csv
 import os
 import hashlib
 
+
 def csv_init(file_name, header_row=None):
     csv_file = file_name
     csv_path = os.path.join(os.getcwd(), csv_file)
@@ -14,6 +15,7 @@ def csv_init(file_name, header_row=None):
         print(f"The CSV file '{csv_file}' has been created.")
     else:
         print(f"The CSV file '{csv_file}' already exists.")
+
 
 def generate_hash(data):
     hash_object = hashlib.new('md5')
