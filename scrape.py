@@ -4,13 +4,12 @@ import time
 import sqlite3
 import requests
 from tqdm import tqdm
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment
 from selenium import webdriver
 from datetime import datetime, timezone
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
-from utils.misc import csv_init, generate_hash
+from utils.misc import generate_hash
 
 # basic init
 DATABASE_FILE = "data.sqlite3"
@@ -18,7 +17,7 @@ chrome_options = Options()
 prefs = {"profile.managed_default_content_settings.images": 2}
 chrome_options.add_experimental_option("prefs", prefs)
 driver = webdriver.Chrome(options=chrome_options)
-driver.set_page_load_timeout(10) 
+driver.set_page_load_timeout(10)
 main_sitemap_url = "https://cognitus.com/sitemap.xml"
 conn = sqlite3.connect(DATABASE_FILE)
 conn.row_factory = sqlite3.Row
@@ -41,7 +40,7 @@ c.execute("""CREATE TABLE IF NOT EXISTS urls (
 
 
 driver.get(main_sitemap_url)
-time.sleep(10)
+time.sleep(10) # wait to pass captcha to obtain browser cookie
 cookie = driver.get_cookies()[0]['value']
 user_agent = driver.execute_script("return navigator.userAgent;")
 header = {
@@ -76,12 +75,12 @@ for sitemap in sub_sitemaps:
     c.execute("SELECT * From sitemaps where hash= ?", (sitemap["hash"],))
     db_row = c.fetchone()
     if sitemap['hash'] not in existing_hashes:
-        c.execute("INSERT INTO sitemaps (link, datemod, dateadded, hash) VALUES (?, ?, ?, ?)", 
+        c.execute("INSERT INTO sitemaps (link, datemod, dateadded, hash) VALUES (?, ?, ?, ?)",
                   (sitemap['link'], sitemap['datemod'], sitemap['dateadded'], sitemap['hash']))
         conn.commit()
         sub_sitemaps_to_scrape.append(sitemap)
     elif db_row and db_row['dateadded'] < sitemap['datemod']:
-        c.execute("UPDATE sitemaps SET dateadded = ? WHERE hash = ?", (current_datetime,sitemap["hash"],))
+        c.execute("UPDATE sitemaps SET dateadded = ? WHERE hash = ?", (current_datetime, sitemap["hash"],))
         conn.commit()
         sub_sitemaps_to_scrape.append(sitemap)
 
@@ -113,7 +112,7 @@ for url in urls:
         conn.commit()
         urls_to_scrape.append(url)
     elif db_row and db_row['dateadded'] < url['datemod']:
-        c.execute("UPDATE urls SET dateadded = ? WHERE hash = ?", (current_datetime,url["hash"],))
+        c.execute("UPDATE urls SET dateadded = ? WHERE hash = ?", (current_datetime, url["hash"],))
         conn.commit()
         urls_to_scrape.append(url)
 
@@ -154,25 +153,25 @@ for filename in tqdm(os.listdir(html_dir)):
 
         for link in soup.find_all("style"):
             link.decompose()
-        
+
         for link in soup.find_all("meta"):
             link.decompose()
-        
+
         for link in soup.find_all("form"):
             link.decompose()
 
         for link in soup.find_all("a"):
             link.decompose()
-        
+
         for link in soup.find_all("svg"):
             link.decompose()
 
         for script in soup.find_all("script"):
             script.decompose()
-        
+
         for img in soup.find_all("img"):
             img.decompose()
-        
+
         for comment in soup.find_all(string=lambda text: isinstance(text, Comment)):
             comment.extract()
 
