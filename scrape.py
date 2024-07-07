@@ -1,14 +1,14 @@
-import requests
-from bs4 import BeautifulSoup
-import csv
+import os
 import pdb
 import time
 import sqlite3
-from datetime import datetime, timezone
+import requests
 from tqdm import tqdm
-from selenium.webdriver.chrome.options import Options
+from bs4 import BeautifulSoup
 from selenium import webdriver
+from datetime import datetime, timezone
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 
 from utils.misc import csv_init, generate_hash
 
@@ -126,3 +126,55 @@ for url in urls_to_scrape:
     with open(f"data/crawled_html/{url['hash']}.html", "w", encoding="utf-8") as file:
         file.write(ps)
 driver.quit()
+
+html_dir = "data/crawled_html_copy"
+
+for filename in tqdm(os.listdir(html_dir)):
+    if filename.endswith(".html"):
+        file_path = os.path.join(html_dir, filename)
+        with open(file_path, "r", encoding="utf-8") as file:
+            html_content = file.read()
+
+        soup = BeautifulSoup(html_content, "html.parser")
+
+        for element in soup.find_all(class_="menu-item"):
+            element.decompose()
+
+        for link in soup.find_all("link"):
+            link.decompose()
+
+        for link in soup.find_all("noscript"):
+            link.decompose()
+
+        for element in soup.find_all(["header"]):
+            element.decompose()
+
+        for element in soup.find_all(["footer"]):
+            element.decompose()
+
+        for link in soup.find_all("style"):
+            link.decompose()
+        
+        for link in soup.find_all("meta"):
+            link.decompose()
+        
+        for link in soup.find_all("form"):
+            link.decompose()
+
+        for link in soup.find_all("a"):
+            link.decompose()
+        
+        for link in soup.find_all("svg"):
+            link.decompose()
+
+        for script in soup.find_all("script"):
+            script.decompose()
+        
+        for img in soup.find_all("img"):
+            img.decompose()
+        
+        for comment in soup.find_all(string=lambda text: isinstance(text, Comment)):
+            comment.extract()
+
+        with open(file_path, "w", encoding="utf-8") as file:
+            file.write(str(soup))
