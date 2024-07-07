@@ -10,9 +10,17 @@ import nltk
 import sqlite3
 from langchain_experimental.llms.ollama_functions import OllamaFunctions
 from fastapi import FastAPI, Body
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 persist_directory = "./embeddings/chromadb"
 
