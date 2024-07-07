@@ -40,7 +40,7 @@ c.execute("""CREATE TABLE IF NOT EXISTS urls (
 
 
 driver.get(main_sitemap_url)
-time.sleep(10) # wait to pass captcha to obtain browser cookie
+time.sleep(10)  # wait to pass captcha to obtain browser cookie
 cookie = driver.get_cookies()[0]['value']
 user_agent = driver.execute_script("return navigator.userAgent;")
 header = {

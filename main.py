@@ -14,8 +14,8 @@ from fastapi import FastAPI, Body
 app = FastAPI()
 
 
-
 persist_directory = "./embeddings/chromadb"
+
 
 def get_url_by_hash(hash):
     conn = sqlite3.connect('data.sqlite3')
@@ -47,7 +47,7 @@ def add_embeddings_to_chromadb(html_dir):
         db = Chroma(embedding_function=embeddings, persist_directory=persist_directory)
     else:
         print("Creating a new ChromaDB...")
-        
+
         documents = []
         for filename in os.listdir(html_dir):
             if filename.endswith(".html"):
@@ -92,15 +92,13 @@ def get_insights(db, question):
 
 html_dir = "./data/crawled_html_copy/"
 db = add_embeddings_to_chromadb(html_dir)
-# target_text = "what is cognitus?"
-# response, sources = get_insights(db, target_text)
-# pdb.set_trace()
+
 
 @app.post("/get_insights")
 def get_insights_endpoint(body: dict = Body(...)):
     target_text = body.get("target_text")
     if target_text is None:
         return {"detail": "target_text is required"}
-    
+
     response, sources = get_insights(db, target_text)
     return {"response": response, "sources": sources}
