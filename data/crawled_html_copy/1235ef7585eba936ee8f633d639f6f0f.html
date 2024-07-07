@@ -1,0 +1,262 @@
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#"><head>
+<title>Transforming Customer Support with Retrieval-Augmented Generation on SAP BTP</title>
+</head>
+<body class="post-template-default single single-post postid-5176 single-format-standard wp-custom-logo">
+<div aria-hidden="true" aria-labelledby="searchModalLabel" class="modal fade" id="searchModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-scrollable modal-xl">
+<div class="modal-content">
+<div class="modal-body">
+</div>
+</div>
+</div>
+</div>
+<h1 style="font-size: 0px;line-height: 0;width: 0px;height: 0px;">Retrieval-Augmented Generation on SAP BTP</h1>
+<main class="site-main" id="primary">
+<div class="bannerImageTop">
+<div class="bannerImageSec">
+</div>
+</div>
+<section class="section singlePostPage">
+<div class="container" id="65">
+<div class="row topPostContent">
+<div class="col-lg-6 bannerImageInfo">
+<div class="publishAndCat">
+<div class="categoryAll">
+
+
+</div>
+<div class="autherSinglePost">
+
+</div>
+<p class="postPublish">June 18, 2024</p>
+</div>
+<h3 class="font-semiBold h3">Transforming Customer Support with Retrieval-Augmented Generation on SAP BTP</h3>
+</div>
+<div class="col-lg-6">
+<div class="py-2 mt-1 the_excerpt pe-md-5">
+<p>In today’s fast-paced business environment, providing exceptional customer support is more critical than ever. Companies face numerous challenges such as manual email processing, insufficient customer insights, and ineffective data analysis. These challenges lead to slower response times, decreased customer satisfaction, and inconsistent service quality. The introduction of advanced AI technologies like Retrieval-Augmented Generation (RAG) on the SAP Business Technology Platform (SAP BTP) offers a revolutionary solution to these issues.</p>
+</div>
+</div>
+<div class="my-3 d-lg-none">
+<div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://cognitus.com/transforming-customer-support-with-retrieval-augmented-generation-on-sap-btp/"><div class="heateor_sss_sharing_ul"></div><div class="heateorSssClear"></div></div> </div>
+</div>
+<div class="legalSubPageContent blogDetail">
+<div class="contentSections">
+<div class="row">
+<div class="col-lg-3">
+<div class="stickySideBar d-none d-lg-block">
+<ul class="navs" id="detailNav">
+<li>
+
+</li>
+<li>
+
+</li>
+<li>
+
+</li>
+<li>
+
+</li>
+<li>
+
+</li>
+<li>
+
+</li>
+<li>
+
+</li>
+<li>
+
+</li>
+<li>
+
+</li>
+<li>
+
+</li>
+<li>
+
+</li>
+</ul>
+<div class="mt-4 pt-2">
+<div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" data-heateor-ss-offset="0" data-heateor-sss-href="https://cognitus.com/transforming-customer-support-with-retrieval-augmented-generation-on-sap-btp/"><div class="heateor_sss_sharing_ul"></div><div class="heateorSssClear"></div></div> </div>
+</div>
+</div>
+<div class="col-lg-9">
+<div class="content">
+<div class="contentItm mb-4" id="IntroductiontoRetrievalAugmentedGenerationRAG">
+<h5 class="font-bold mb-3">Introduction to Retrieval-Augmented Generation (RAG)</h5>
+<p>Retrieval-Augmented Generation (RAG) is a neural architecture that combines the strengths of large pre-trained language models with external retrieval or search mechanisms. The main goal of the RAG architecture is to improve the capability of language models by allowing them to pull relevant information from a vast corpus, similar to how search engines retrieve relevant web pages based on queries. RAG is used for various tasks such as question answering and knowledge-intensive NLP tasks. This architecture represents a fusion of retrieval-based and generation-based approaches to NLP.</p>
+</div>
+<div class="contentItm mb-4" id="HowRAGWorks">
+<h5 class="font-bold mb-3">How RAG Works</h5>
+<p class="ember-view reader-content-blocks__paragraph" id="ember56">The RAG architecture enhances the capabilities of language models through a three-step process:</p>
+<ol>
+<li><strong>Question Encoding</strong>: The user provides a question or prompt, which is then encoded by a sequence-to-sequence model into a dense vector.</li>
+<li><strong>Document Retrieval</strong>: This dense vector is used as a query to retrieve relevant documents or passages from a large corpus. The retrieval is typically done using a dense vector space search, where documents in the corpus are pre-embedded in the same dense vector space. The top most relevant documents or passages are retrieved based on their proximity to the query vector.</li>
+<li><strong>Answer Generation</strong>: The retrieved documents and the original question are fed into a Large Language Model to generate an answer. The model is fine-tuned on a downstream task to generate relevant responses based on both the input question and the retrieved passages.</li>
+</ol>
+</div>
+<div class="contentItm mb-4" id="TheSAPBTPRAGArchitecture">
+<h5 class="font-bold mb-3">The SAP BTP RAG Architecture</h5>
+<p>The provided architecture diagram showcases a CAP-based multi-tenant SaaS architecture utilizing RAG. This architecture is designed to seamlessly combine various Large Language Models (LLMs) using SAP AI Core. By leveraging the capabilities of LangChain in the CAP model and implementing advanced methods such as custom schema-based output parsing or Retrieval Augmented Generation (RAG) with embeddings and a vector database, businesses can maximize the benefits for their specific needs.</p>
+<p></p>
+<p>Image Credit: </p>
+</div>
+<div class="contentItm mb-4" id="ComponentsandServicesintheArchitecture">
+<h5 class="font-bold mb-3">Components and Services in the Architecture</h5>
+<ol>
+<li><strong>SAP HANA Cloud</strong>: This component is used to store, process, and federate data in a cloud infrastructure. It provides the necessary backend for handling large datasets required for RAG.</li>
+<li><strong>SAP AI Core</strong>: This platform builds and manages artificial intelligence solutions, providing the foundational infrastructure for deploying AI models and handling AI workloads efficiently.</li>
+<li><strong>SAP AI Launchpad</strong>: This service manages AI scenarios across all landscapes and deployment options. It provides a centralized platform for monitoring and managing AI operations.</li>
+<li><strong>SAP BTP, Cloud Foundry Runtime</strong>: This runtime environment allows the operation of polyglot applications, offering flexibility and scalability for different application components.</li>
+<li><strong>Destination Service</strong>: This service retrieves information about destinations in the Cloud Foundry environment, ensuring seamless integration and data flow.</li>
+<li><strong>SAP HTML5 Application Repository Service for SAP BTP</strong>: This service is used to develop and run HTML5 applications in a cloud environment, supporting the front-end needs of the application.</li>
+<li><strong>SAP Authorization and Trust Management Service</strong>: This component manages application authorizations and connections to identity providers, ensuring secure access and operations.</li>
+<li><strong>SAP Cloud Transport Management</strong>: This service manages the transport of development artifacts and application-specific content, facilitating efficient deployment and updates.</li>
+<li><strong>SAP Business Application Studio</strong>: This integrated development environment is used for developing, debugging, testing, and deploying SAP business applications.</li>
+<li><strong>SAP Continuous Integration and Delivery</strong>: This service configures and runs predefined pipelines for continuous integration and delivery, ensuring smooth and automated deployment processes.</li>
+<li><strong>SAP Application Logging Service for SAP BTP</strong>: This component creates, stores, accesses, and analyses application logs, providing critical insights into application performance and issues.</li>
+<li><strong>Application Autoscaler</strong>: This service automatically scales applications to meet their dynamic resource needs, ensuring optimal performance and cost-efficiency.</li>
+<li><strong>SAP BTP, Kyma Runtime</strong>: This runtime extends SAP solutions using cloud-native microservices and serverless functions, providing agility and scalability for modern application development.</li>
+</ol>
+</div>
+<div class="contentItm mb-4" id="DetailedUseCaseEnhancingCustomerSupportinaTravelAgency">
+<h5 class="font-bold mb-3">Detailed Use Case: Enhancing Customer Support in a Travel Agency</h5>
+<p><strong>Scenario Description</strong></p>
+<p>The reference architecture illustrates a multi-tenant application developed for the SAP Business Technology Platform (SAP BTP), tailored for enhancing customer support within a travel agency. This scenario presents a comprehensive SaaS solution for improving email insights and automation.</p>
+</div>
+<div class="contentItm mb-4" id="KeyFeaturesandBenefits">
+<h5 class="font-bold mb-3">Key Features and Benefits</h5>
+<ol>
+<li><strong>Email Analysis</strong>: The system analyses incoming emails using Large Language Models (LLMs) to offer core insights such as categorization, sentiment analysis, and urgency assessment. This ensures that emails are processed efficiently and appropriately prioritized.</li>
+<li><strong>Key Fact Extraction</strong>: The system goes beyond basic analysis by extracting key facts and customizable fields like location, which are managed through a dedicated configuration page.</li>
+<li><strong>Historical Email Embeddings</strong>: One innovative feature involves utilizing email embeddings to identify similar historical emails. This aids in understanding how similar requests were handled previously, fostering consistent and efficient customer service.</li>
+<li><strong>Summarization and Translation</strong>: The system demonstrates capabilities of summarizing and translating both email subject and body, enabling streamlined comprehension across languages and breaking down language barriers.</li>
+<li><strong>Response Generation</strong>: The system takes automation to the next level by generating potential responses for customer inquiries. This response generation is influenced by configurable actions and services, enhancing response accuracy and speed.</li>
+<li><strong>Seamless Integration</strong>: The flexibility to connect with SAP systems like SAP Concur adds an enterprise dimension, allowing seamless integration of processes and data. This optimizes operations and ensures that customer support is aligned with business workflows.</li>
+</ol>
+</div>
+<div class="contentItm mb-4" id="ImplementationSteps">
+<h5 class="font-bold mb-3">Implementation Steps</h5>
+<ol>
+<li><strong>Setting Up the Environment</strong>: Begin by setting up the necessary environment on SAP BTP. This includes provisioning SAP HANA Cloud, SAP AI Core, and other essential services.</li>
+<li><strong>Developing the Front-End</strong>: Use SAP HTML5 Application Repository Service and SAP Business Application Studio to develop a responsive and user-friendly front-end for the application. This involves creating interfaces for email analysis, key fact extraction, and configuration pages.</li>
+<li><strong>Implementing Email Analysis</strong>: Leverage SAP AI Core to implement LLMs for analyzing incoming emails. Fine-tune models for categorization, sentiment analysis, and urgency assessment. Integrate these models with the email processing workflow.</li>
+<li><strong>Key Fact Extraction</strong>: Develop custom schemas for extracting key facts from emails. Use LangChain and vector databases to manage and query extracted information efficiently.</li>
+<li><strong>Embedding and Retrieval</strong>: Implement email embeddings to identify similar historical emails. Use dense vector space search to retrieve relevant emails and provide context for handling new inquiries.</li>
+<li><strong>Summarization and Translation</strong>: Integrate summarization and translation capabilities into the email processing workflow. Use SAP AI Core and language models to provide accurate and concise summaries and translations.</li>
+<li><strong>Automating Responses</strong>: Develop a module for generating potential responses based on analyzed data and historical handling of similar inquiries. Ensure that the response generation module is configurable to adapt to different business rules and actions.</li>
+<li><strong>Integration with SAP Concur</strong>: Implement seamless integration with SAP Concur for travel-related operations. Use the Destination Service and other relevant components to retrieve and process necessary data.</li>
+<li><strong>Testing and Deployment</strong>: Conduct thorough testing of the application to ensure all components work seamlessly. Use SAP Continuous Integration and Delivery for automated deployment.</li>
+<li><strong>Monitoring and Scaling</strong>: Set up monitoring using SAP Application Logging Service. Use the Application Autoscaler to ensure the application scales dynamically based on demand.</li>
+</ol>
+</div>
+<div class="contentItm mb-4" id="AddressingCustomerSupportChallenges">
+<h5 class="font-bold mb-3">Addressing Customer Support Challenges</h5>
+<p class="ember-view reader-content-blocks__paragraph" id="ember73">Businesses often grapple with several customer support issues that hinder their efficiency and customer satisfaction. Here’s how the RAG-based solution on SAP BTP addresses these challenges:</p>
+<ol>
+<li><strong>Manual Email Processing</strong>: The AI solution automates email handling, reducing the need for manual processing and enabling faster response times.</li>
+<li><strong>Insufficient Customer Insights</strong>: By leveraging advanced email analysis and key fact extraction, the system provides deep insights into customer inquiries, helping businesses understand and address customer needs more effectively.</li>
+<li><strong>Ineffective Data Analysis</strong>: The integration of LLMs and embedding-based retrieval ensures that data analysis is robust and accurate, enabling businesses to make data-driven decisions.</li>
+<li><strong>Language Barriers</strong>: Summarisation and translation capabilities break down language barriers, allowing businesses to provide support to a global customer base.</li>
+<li><strong>Slow Response Times</strong>: The automation of response generation significantly reduces response times, ensuring that customers receive timely and accurate support.</li>
+<li><strong>Lack of Automation</strong>: The system automates various aspects of customer support, from email analysis to response generation, improving efficiency and reducing the workload on support teams.</li>
+<li><strong>Adaptability Issues</strong>: The flexible architecture allows the solution to be adapted to different industries and business needs, ensuring that it can grow with the business.</li>
+</ol>
+</div>
+<div class="contentItm mb-4" id="OutcomesandBenefits">
+<h5 class="font-bold mb-3">Outcomes and Benefits</h5>
+<ol>
+<li><strong>Enhanced Customer Satisfaction</strong>: Faster, personalized, and consistent customer service leads to higher customer satisfaction.</li>
+<li><strong>Increased Employee Efficiency</strong>: Automation reduces the manual workload on employees, allowing them to focus on more strategic tasks.</li>
+<li><strong>Cost Savings</strong>: Efficient automation and data-driven decision-making lead to significant cost savings.</li>
+<li><strong>Adaptability and Competitiveness</strong>: The solution’s flexibility allows businesses to adapt to changing market needs and stay competitive.</li>
+<li><strong>Optimized Operations</strong>: Seamless integration with systems like SAP Concur optimizes operations and ensures that customers.</li>
+</ol>
+</div>
+<div class="contentItm mb-4" id="ImplementRAGonSAPBTPwithCognitus">
+<h5 class="font-bold mb-3">Implement RAG on SAP BTP with Cognitus</h5>
+<p>Cognitus helps businesses deploy Retrieval-Augmented Generation (RAG) on SAP BTP with an industry-specific implementation approach that helps ensure smooth integration and streamline customer support operations. Here are a few value drivers that Cognitus brings to the implementation process:</p>
+<ul>
+<li><strong>Detailed assessment:</strong> Our in-depth assessment services help conduct a detailed assessment of your existing customer support operations, identify pain points, and how RAG can help improve those.</li>
+<li><strong>Proven expertise: </strong>Our seasoned experts help make the most of your SAP BTP implementation and services including SAP HANA Cloud and SAP AI Core to ensure seamless integration with your existing SAP systems.</li>
+<li><strong>Robust testing services:</strong> Cognitus conducts rigorous testing of all components to ensure seamless functionality, version control, and integration and proactively addresses any emerging issues.</li>
+<li><strong>Ongoing support:</strong> Cognitus offers continuous support during and post-implementation to help establish a cohesive digital environment for your customer support executives to run smooth operations.</li>
+</ul>
+</div>
+<div class="contentItm mb-4" id="Conclusion">
+<h5 class="font-bold mb-3">Conclusion</h5>
+<p>Embracing RAG on SAP BTP not only addresses current customer support challenges but also positions businesses for future growth. By automating processes, providing deep insights, and enabling faster response times, companies can achieve higher levels of customer satisfaction and operational efficiency.</p>
+<p>Cognitus offers unique capabilities to help businesses ensure smooth integration of RAG on SAP BTP into their existing systems and harness the full potential of AI-driven customer support. In doing so, businesses can secure a competitive edge in an increasingly customer-centric world.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section pt-0">
+<div class="container">
+<div class="row">
+<div class="col-md-7">
+<h3 class="font-bold">Recent Blog Posts</h3>
+</div>
+</div>
+<div class="customArrow recenPostSlider slick-initialized slick-slider"><button aria-label="Previous" class="slick-prev slick-arrow" style="" type="button">Previous</button>
+<div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 8809px; transform: translate3d(-1149px, 0px, 0px);"><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="-3" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="-2" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="-1" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="false" class="blogPostCardItm slick-slide slick-current slick-active" data-slick-index="0" style="width: 371px;" tabindex="0">
+
+</div><div aria-hidden="false" class="blogPostCardItm slick-slide slick-active" data-slick-index="1" style="width: 371px;" tabindex="0">
+
+</div><div aria-hidden="false" class="blogPostCardItm slick-slide slick-active" data-slick-index="2" style="width: 371px;" tabindex="0">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide" data-slick-index="3" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide" data-slick-index="4" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide" data-slick-index="5" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide" data-slick-index="6" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide" data-slick-index="7" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide" data-slick-index="8" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide" data-slick-index="9" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="10" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="11" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="12" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="13" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="14" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="15" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="16" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="17" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="18" id="" style="width: 371px;" tabindex="-1">
+
+</div><div aria-hidden="true" class="blogPostCardItm slick-slide slick-cloned" data-slick-index="19" id="" style="width: 371px;" tabindex="-1">
+
+</div></div></div>
+<button aria-label="Next" class="slick-next slick-arrow" style="" type="button">Next</button></div>
+</div>
+</section>
+</main>
+
+<iframe owner="archetype" style="display: none; visibility: hidden;" title="archetype"></iframe></body></html>
