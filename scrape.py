@@ -122,7 +122,7 @@ for url in urls_to_scrape:
     bot_detected = "Checking the site connection security"
     if bot_detected in ps:
         pdb.set_trace()
-    with open(f"data/crawled_html/{url['hash']}.html", "w", encoding="utf-8") as file:
+    with open(f"data/crawled_html_copy/{url['hash']}.html", "w", encoding="utf-8") as file:
         file.write(ps)
 driver.quit()
 
