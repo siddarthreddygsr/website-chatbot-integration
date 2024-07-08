@@ -4,9 +4,12 @@
 
 ![Frontend Chat UI](images/image.png)
 
+## Architechture
+![System architecture diagram](images/architecture.png)
+
 ## Installation and usage
 
-**This part can be skipped, this repo contains the initial scraped data for getting started, only the new pages will be crawled by checking the data.sqlite3 database dates.**
+**This part can be skipped, this repo contains the initial scraped data for getting started, only the new pages will be crawled by checking the data.sqlite3 database dates when scrapy.py is run.**
 
 To start the bot you have to scrape the data from Cognitus website which can be done by using
 
@@ -39,6 +42,7 @@ This builds 2 docker images one for frontend with node and the other for backend
 
 **Note:** The first message after the docker containers start running takes a bit longer as it would be setting up ollama
 
+**Note:** This model doesnt consider the chat history while replying, every message is indepemdent of itself.
 
 ## Technical info
 Model used - Microsoft phi 3 
