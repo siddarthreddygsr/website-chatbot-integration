@@ -1,5 +1,9 @@
 # Cognitus Chatbot
 
+## Demo images
+
+![Frontend Chat UI](images/image.png)
+
 ## Installation and usage
 
 To start the bot you have to scrape the data from Cognitus website which can be done by using
