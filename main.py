@@ -92,7 +92,7 @@ def get_insights(db, question):
     context = "\n".join([snippet[0].page_content for snippet in similar_snippets])
     llm = OllamaFunctions(model="phi3", format="json", temperature=0)
     insights = llm.invoke(
-        f"Your name is Alex, you are an agent marketing cognitus, Given the following context:{context} Answer the question: {question}")
+        f"Your are Alex, an AI sales executive at Cognitus. Using the provided context:{context}, please answer the following question: {question}")
 
     return insights.content, sources
 
