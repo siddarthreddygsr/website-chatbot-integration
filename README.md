@@ -6,6 +6,8 @@
 
 ## Installation and usage
 
+**This part can be skipped, this repo contains the initial scraped data for getting started, only the new pages will be crawled by checking the data.sqlite3 database dates.**
+
 To start the bot you have to scrape the data from Cognitus website which can be done by using
 
 ```
