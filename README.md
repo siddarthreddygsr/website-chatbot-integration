@@ -18,6 +18,12 @@ python3 -m venv env
 pip install -r requirements.txt
 python3 scrape.py
 ```
+**Note:** This script shouldn't ideally require any changes more than installed chrome as the selenium version in this project is 4.22.0 and from selenium 4.6.0 it configures the chromedriver automatically and takes care of the updates. If it still doesnt work please add these lines while initialising the browser in line 18-20
+
+```
+options.binary_location = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+driver = webdriver.Chrome(chrome_options=options, executable_path="C:/Utility/BrowserDrivers/chromedriver.exe", )
+```
 
 **Note:** This is the only part of the entire project that is not dockerised as it needs selenium to 
 1. Get the browser cookies to prevent being detected as a bot 
